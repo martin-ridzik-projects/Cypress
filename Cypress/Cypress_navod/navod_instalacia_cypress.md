@@ -4,6 +4,7 @@ Node.js: https://nodejs.org/en/download
 
 # 1.  Vytvorenie priečinka projektu
 1.1 Na ploche vytvoríme priečinok s názvom: `Framework` 
+
 1.2 Otvoríme VisualStudioCode → File → Open Folder → vyberieme priečinok `Framework`.
 
 # 2.  Otvorenie terminálu 
