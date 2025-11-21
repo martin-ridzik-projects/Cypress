@@ -15,8 +15,7 @@ Node.js: https://nodejs.org/en/download
 2.2 Terminál sa otvorí v dolnej časti VS Code. Tu zadáme všetky príkazy. 
 
 # 3.  Inicializácia `Node.js` projektu
-Do terminálu zadáme prvý príkaz:  
-`npm init`
+Do terminálu zadáme prvý príkaz: `npm init`
 
 package name: `framework_cypress` (bez veľkých písmen) --> (enter)
 
@@ -33,8 +32,7 @@ test command, git repository, keywords, author, license --> (nezadávame nič + 
 > NEZATVARAME TERMINAL, bude potrebný na dalšie kroky!
 
 # 4.  Inštalácia Cypress
-Do terminálu zadáme druhý príkaz:
-`npm install cypress --save-dev`
+Do terminálu zadáme druhý príkaz: `npm install cypress --save-dev`
 
 -  Vytvorí sa priečinok `node_modules` a súbor `package-lock.json`
   
@@ -43,11 +41,10 @@ Do terminálu zadáme druhý príkaz:
 - `package-lock.json` zabezpečuje rovnaké verzie balíčkov pre všetkých
 
 # 5.  Prvé spustenie Cypress 
-Do terminálu zadáme tretí príkaz:
-`npx cypress open` 
+Do terminálu zadáme tretí príkaz: `npx cypress open` 
 
 - Otvorí sa Cypress v prehliadači
-- 
+ 
 - Klikneme na E2E Testing (Not Configured)
   
 - Vyberieme prehliadač (Chrome) - Start E2E Testing in Chrome
@@ -60,7 +57,9 @@ Do terminálu zadáme tretí príkaz:
 6.1 Po prvom spustení Cypressu sa vo VS Code zobrazí priečinok `cypress` 
 
 `e2e` - tu budeme vytvárať testy 
+
 `fixtures` - statické testovacie dáta 
+
 `support` - CSS selektory a helper funkcie 
 
 # 7.  Vytvorenie testovacích súborov
@@ -68,6 +67,7 @@ Do terminálu zadáme tretí príkaz:
 
 7.2 Vytvorenie súborov
 - `prihlasenieTest.cy.js`
+  
 - `produktyTest.cy.js`
 
 > Poznámka: .cy.js prípona je povinná, inak testy Cypress nezobrazí.
@@ -77,6 +77,7 @@ Do terminálu zadáme tretí príkaz:
 
 8.2 Vytvorenie súborov 
 - `prihlasenieStranka.js`
+  
 - `produktyStranka.js`
 
 # 9. Projekt je pripravený 
