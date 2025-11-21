@@ -1,5 +1,7 @@
 Pred inštaláciou je potrebné mať nainštalované aktuálne verzie: 
+
 VisualStudioCode: https://code.visualstudio.com/
+
 Node.js: https://nodejs.org/en/download
 
 # 1.  Vytvorenie priečinka projektu
