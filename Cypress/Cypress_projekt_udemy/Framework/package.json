@@ -1,0 +1,19 @@
+{
+  "name": "framework_cypress",
+  "version": "1.0.0",
+  "description": "framework cypress udemy",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "runChrome": "npx cypress run --browser chrome --headed",
+    "merge-json": "npx mochawesome-report-generator cypress/reports/merged-report.json -o cypress/reports/merged-html-report",
+    "generate-html": "npx mochawesome-report-generator cypress/reports/merged-report.json -o cypress/reports/merged-html-report"
+  },
+  "devDependencies": {
+    "cypress": "^15.7.0",
+    "mochawesome": "^7.1.4"
+  }
+}

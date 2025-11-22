@@ -1,0 +1,185 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-11-21T19:08:14.466Z",
+    "end": "2025-11-21T19:08:16.896Z",
+    "duration": 2430,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "c94b2fcf-1cde-49e7-9854-8a542d89cbff",
+      "title": "",
+      "fullFile": "cypress\\e2e\\2-advanced-examples\\storage.cy.js",
+      "file": "cypress\\e2e\\2-advanced-examples\\storage.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "aa2d1cef-a4d4-4b6c-bd5c-22fcfd125f2c",
+          "title": "Local Storage / Session Storage",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "cy.clearLocalStorage() - clear all data in localStorage for the current origin",
+              "fullTitle": "Local Storage / Session Storage cy.clearLocalStorage() - clear all data in localStorage for the current origin",
+              "timedOut": null,
+              "duration": 610,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// https://on.cypress.io/clearlocalstorage\ncy.get('.ls-btn').click();\ncy.get('.ls-btn').should(() => {\n  expect(localStorage.getItem('prop1')).to.eq('red');\n  expect(localStorage.getItem('prop2')).to.eq('blue');\n  expect(localStorage.getItem('prop3')).to.eq('magenta');\n});\ncy.clearLocalStorage();\ncy.getAllLocalStorage().should(() => {\n  expect(localStorage.getItem('prop1')).to.be.null;\n  expect(localStorage.getItem('prop2')).to.be.null;\n  expect(localStorage.getItem('prop3')).to.be.null;\n});\ncy.get('.ls-btn').click();\ncy.get('.ls-btn').should(() => {\n  expect(localStorage.getItem('prop1')).to.eq('red');\n  expect(localStorage.getItem('prop2')).to.eq('blue');\n  expect(localStorage.getItem('prop3')).to.eq('magenta');\n});\n// Clear key matching string in localStorage\ncy.clearLocalStorage('prop1');\ncy.getAllLocalStorage().should(() => {\n  expect(localStorage.getItem('prop1')).to.be.null;\n  expect(localStorage.getItem('prop2')).to.eq('blue');\n  expect(localStorage.getItem('prop3')).to.eq('magenta');\n});\ncy.get('.ls-btn').click();\ncy.get('.ls-btn').should(() => {\n  expect(localStorage.getItem('prop1')).to.eq('red');\n  expect(localStorage.getItem('prop2')).to.eq('blue');\n  expect(localStorage.getItem('prop3')).to.eq('magenta');\n});\n// Clear keys matching regex in localStorage\ncy.clearLocalStorage(/prop1|2/);\ncy.getAllLocalStorage().should(() => {\n  expect(localStorage.getItem('prop1')).to.be.null;\n  expect(localStorage.getItem('prop2')).to.be.null;\n  expect(localStorage.getItem('prop3')).to.eq('magenta');\n});",
+              "err": {},
+              "uuid": "bc02578c-a6c1-4891-b94b-e178c692f999",
+              "parentUUID": "aa2d1cef-a4d4-4b6c-bd5c-22fcfd125f2c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "cy.getAllLocalStorage() - get all data in localStorage for all origins",
+              "fullTitle": "Local Storage / Session Storage cy.getAllLocalStorage() - get all data in localStorage for all origins",
+              "timedOut": null,
+              "duration": 180,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// https://on.cypress.io/getalllocalstorage\ncy.get('.ls-btn').click();\n// getAllLocalStorage() yields a map of origins to localStorage values\ncy.getAllLocalStorage().should(storageMap => {\n  expect(storageMap).to.deep.equal({\n    // other origins will also be present if localStorage is set on them\n    'https://example.cypress.io': {\n      prop1: 'red',\n      prop2: 'blue',\n      prop3: 'magenta'\n    }\n  });\n});",
+              "err": {},
+              "uuid": "b7d0f445-3b8d-4915-b8ed-11a4e8c0e235",
+              "parentUUID": "aa2d1cef-a4d4-4b6c-bd5c-22fcfd125f2c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "cy.clearAllLocalStorage() - clear all data in localStorage for all origins",
+              "fullTitle": "Local Storage / Session Storage cy.clearAllLocalStorage() - clear all data in localStorage for all origins",
+              "timedOut": null,
+              "duration": 171,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// https://on.cypress.io/clearalllocalstorage\ncy.get('.ls-btn').click();\n// clearAllLocalStorage() yields null\ncy.clearAllLocalStorage();\ncy.getAllLocalStorage().should(() => {\n  expect(localStorage.getItem('prop1')).to.be.null;\n  expect(localStorage.getItem('prop2')).to.be.null;\n  expect(localStorage.getItem('prop3')).to.be.null;\n});",
+              "err": {},
+              "uuid": "a6af88e8-177a-4186-a538-dd93927d9e6d",
+              "parentUUID": "aa2d1cef-a4d4-4b6c-bd5c-22fcfd125f2c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "cy.getAllSessionStorage() - get all data in sessionStorage for all origins",
+              "fullTitle": "Local Storage / Session Storage cy.getAllSessionStorage() - get all data in sessionStorage for all origins",
+              "timedOut": null,
+              "duration": 152,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// https://on.cypress.io/getallsessionstorage\ncy.get('.ls-btn').click();\n// getAllSessionStorage() yields a map of origins to sessionStorage values\ncy.getAllSessionStorage().should(storageMap => {\n  expect(storageMap).to.deep.equal({\n    // other origins will also be present if sessionStorage is set on them\n    'https://example.cypress.io': {\n      prop4: 'cyan',\n      prop5: 'yellow',\n      prop6: 'black'\n    }\n  });\n});",
+              "err": {},
+              "uuid": "465829d2-8125-4629-83c8-44dd8055f96c",
+              "parentUUID": "aa2d1cef-a4d4-4b6c-bd5c-22fcfd125f2c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "cy.clearAllSessionStorage() - clear all data in sessionStorage for all origins",
+              "fullTitle": "Local Storage / Session Storage cy.clearAllSessionStorage() - clear all data in sessionStorage for all origins",
+              "timedOut": null,
+              "duration": 163,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// https://on.cypress.io/clearallsessionstorage\ncy.get('.ls-btn').click();\n// clearAllSessionStorage() yields null\ncy.clearAllSessionStorage();\ncy.getAllSessionStorage().should(() => {\n  expect(sessionStorage.getItem('prop4')).to.be.null;\n  expect(sessionStorage.getItem('prop5')).to.be.null;\n  expect(sessionStorage.getItem('prop6')).to.be.null;\n});",
+              "err": {},
+              "uuid": "84ff9b2a-7686-4d12-9532-c363cc808576",
+              "parentUUID": "aa2d1cef-a4d4-4b6c-bd5c-22fcfd125f2c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "bc02578c-a6c1-4891-b94b-e178c692f999",
+            "b7d0f445-3b8d-4915-b8ed-11a4e8c0e235",
+            "a6af88e8-177a-4186-a538-dd93927d9e6d",
+            "465829d2-8125-4629-83c8-44dd8055f96c",
+            "84ff9b2a-7686-4d12-9532-c363cc808576"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1276,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report-[name]-[datetime]",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": true,
+        "html": true,
+        "json": true,
+        "reportFilename": "report-[name]-[datetime]",
+        "timestamp": "mmddyyyy_HHMMss",
+        "charts": true,
+        "embeddedScreenshots": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}
